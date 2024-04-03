@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.25.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!-- Include the Google Fonts link to specify the fonts you want to use -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Poppins:wght@600;700&family=Rubik:wght@400;500&display=swap">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* Customize the navbar background color */
+        .navbar {
+            background-color: #343a40; /* Change to your desired background color */
+            height: 80px; /* Adjust the height as needed */
+        }
+       
+        
+        /* Add a bottom border to the navbar links */
+        .navbar-nav .nav-link {
+            color: #fff; /* Change the text color to white */
+            text-decoration: none;
+            transition: color 0.3s, border-bottom 0.3s;
+            position: relative;
+        }
+
+        /* Add the underline effect on hover */
+        .navbar-nav .nav-link::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            background-color: #33ffda; /* Change to your desired color */
+            transform: scaleX(0);
+            transform-origin: bottom left;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+            color: #f87051;
+        }
+       
+        .navbar-nav .nav-link:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Change the background color of the active link */
+        .navbar-nav .nav-link.active {
+            background-color: #343a40; /* Change to your desired background color */
+        }
+
+        /* Style the Welcome message and Login button */
+        .navbar-text {
+            color: white; /* Change the text color to white */
+            margin-right: 15px;
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Change to your desired button color */
+            border-color: #007bff; /* Match the background color */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/"> Video Selling </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' user.id %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' user.id %}">View Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view_cart">View Cart</a>
+                </li>
+               
+            </ul>
+        </div>
+        <div class="navbar-text">
+         
+            {% if user.is_authenticated %}
+                Welcome, {{ user.first_name }}
+                <a href="{% url 'logout' %}" class="btn btn-primary">Sign Out <i class="bi bi-box-arrow-right"></i></a>
+<a href="/view_cart" class="btn btn-primary">Cart <i class="bi bi-cart"></i></a>
+
+            {% else %}
+          
+            {% endif %}
+        </div>
+    </nav>
+    
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>

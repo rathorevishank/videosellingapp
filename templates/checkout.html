@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    {% load static %}
+</head>
+<body>
+
+<h1>Checkout</h1>
+
+<!-- Display Cart Items -->
+<h2>Your Cart:</h2>
+<ul>
+    {% for item in cart_items %}
+        <li>{{ item.product.title }} - {{ item.product.price }}</li>
+    {% endfor %}
+</ul>
+
+<!-- Display Total Cart Price -->
+<p>Total: {{ total_cart_price }}</p>
+
+<!-- Paytm Integration Form -->
+<form action="https://securegw-stage.paytm.in/theia/processTransaction" method="post" name="paytm">
+    {% csrf_token %}
+    {% for key, value in paytm_params.items %}
+        <input type="hidden" name="{{ key }}" value="{{ value }}">
+    {% endfor %}
+    <input type="hidden" name="CHECKSUMHASH" value="{{ checksum }}">
+    <button type="submit">Proceed to Paytm</button>
+</form>
+
+</body>
+</html>

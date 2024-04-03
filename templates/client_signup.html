@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Login Form</title>
+    {% load static %}
+
+
+  
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <style>
+       
+       
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+    margin: 0;
+}
+
+.box {
+    position: relative;
+    width: 400px;
+    height: 590px;
+    background: #28292d;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 100px; /* Add margin to create space between the box and the navbar */
+}
+
+.box::before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent, #ff5733, #ff5733);
+    animation: animate 6s linear infinite;
+}
+
+.box::after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent, #33ff57, #33ff57);
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+form {
+    position: absolute;
+    inset: 2px;
+    background:  #1c1c1c; /* Set the background color to black */
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Add this to center the form content horizontally */
+}
+
+
+h2 {
+    color: #ff5733;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-size: 1.5em;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+.inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 15px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    font-weight: 600; /* Add this line to make the text bold */
+    transition: 0.3s;
+    line-height: 0.2;
+    z-index: 10;
+}
+
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 15px 0px;
+    pointer-events: none;
+    font-size: 1em;
+    color: #8f8f8f;
+    letter-spacing: 0.05em;
+    transition: 0.3s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #45f3ff;
+    transform: translateX(0px) translateY(-26px);
+    font-size: 0.85em;
+}
+
+.inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.3s;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i {
+    height: 34px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.links a {
+    font-size: 0.85em;
+    color: #8f8f8f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.links a:hover,
+.links a:nth-child(2) {
+    color: #45f3ff;
+}
+
+input[type="submit"] {
+    border: none;
+    outline: none;
+    padding: 11px 25px;
+    background: #45f3ff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100px;
+    margin-top: 20px;
+    font-size: 0.85em;
+    transition: background-color 0.3s; /* Added transition */
+}
+
+input[type="submit"]:hover {
+    background: #33ff57; /* Background color change on hover */
+    color: #fff; /* Text color change on hover */
+}
+
+       
+        
+        /* Caret icon */
+        .bi-caret-down {
+            font-size: 14px;
+            margin-left: 4px;
+        }
+      
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            margin-top: 20px; /* Add margin to push the form content down */
+            margin-bottom: 20px; /* Add margin to push the form content up (optional) */
+        }
+        .box {
+            position: relative;
+            width: 400px;
+            height: 590px;
+            background: #28292d;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 60px; /* Add margin to create space between the box and the navbar */
+        }
+
+    </style>
+</head>
+<body>
+  
+     
+        <header class="header_p">
+            <div class="navigation-wrap bg-yellow start-header start-style">
+              <div class="container mob-menu-width">
+                  <div class="row">
+                      <div class="col-12">
+                          <nav class="navbar navbar-expand-md navbar-light"> 
+                             
+                              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                  <ul class="navbar-nav ml-auto py-4 py-md-0 mob_bg_back">
+                                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                          <a href="/" class="nav-link">Home</a>
+                                      </li>
+                                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                          <a class="nav-link" href="/login">Log In</a>
+                                      </li>
+                                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                          <a class="nav-link" href="/sign-up">Sign Up</a>
+                                      </li>
+                                     
+                                  </ul>
+                              </div>
+                          </nav>		
+                      </div>
+                  </div>
+              </div>
+            </div>
+            </header>
+            <main> 
+    <div class="box">
+        <form autocomplete="off" method="post" onsubmit="return validateForm()"> 
+            {% csrf_token %}
+            {% include "base/alert.html" %}
+            <div class="form-content">
+            <h2>Client Sign up</h2>
+
+            <div class="inputBox">
+                <input type="text" name="first_name" required="required">
+                <span>First Name</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" name="last_name" required="required">
+                <span>Last Name</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="email" name="email" required="required">
+                <span>Email Address</span>
+                <i></i>
+            </div>
+            <div id="email-error" class="invalid-feedback" style="display: none;">Please enter a valid email address.</div>
+            <div class="inputBox">
+                <input type="password" name="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div id="password-error" class="invalid-feedback" style="display: none;">Password must contain at least one digit, one lowercase letter, one uppercase letter, and be at least 8 characters long.</div>
+            
+            <div class="links">
+                <a href="/login">Already have an account?</a>
+            </div>
+            <input type="submit" value="Sign up">
+            
+         
+        </form>
+    </div>
+</main>
+    <script>
+        function validateForm() {
+            var email = document.forms[0]["email"].value;
+            var password = document.forms[0]["password"].value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            var valid = true;
+    
+            if (!email.match(emailRegex)) {
+                document.getElementById("email-error").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("email-error").style.display = "none";
+            }
+    
+            if (!password.match(passwordRegex)) {
+                document.getElementById("password-error").style.display = "block";
+                valid = false;
+            } else {
+                document.getElementById("password-error").style.display = "none";
+            }
+    
+            return valid;
+        }
+    </script>
+    
+</body>
+</html>

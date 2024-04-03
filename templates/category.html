@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.25.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Include the Google Fonts link to specify the fonts you want to use -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Poppins:wght@600;700&family=Rubik:wght@400;500&display=swap">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .list-group {
+            margin-top: 20px;
+        }
+
+        .list-group-item {
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.3s; /* Add color transition */
+        }
+
+        .list-group-item:hover {
+            background-color: #343a40; /* Change the background color on hover */
+            color: #fff; /* Change the text color on hover to white */
+        }
+
+        .card {
+            border: 1px solid #e3e3e3;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: #007bff; /* Change title color to blue */
+            margin-top: 15px; /* Add top margin to the title */
+        }
+
+        .card-text {
+            color: #666;
+            margin: 10px; /* Add margin to the description */
+            overflow: hidden;
+            max-height: 100px; /* Set a maximum height for the description */
+            transition: max-height 0.3s ease;
+        }
+
+        .card.show-full .card-text {
+            max-height: none; /* Remove the maximum height when the card is in the "show-full" state */
+        }
+
+        .read-more-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .read-more-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        video {
+            width: 100%;
+            
+        }
+       
+    </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-3">
+                    <h2>Categories</h2>
+                    <ul class="list-group " style="background-color: #343a40;">
+    
+                        {% for category in categories %}
+                            <li class="list-group-item nav-item">
+                                <a class="nav-link" href="/category/{{ category.slug }}">{{ category.category_name }}</a>
+                            </li>
+                        {% endfor %}
+                        <li class="list-group-item nav-item">
+                            <a class="nav-link" href="/latest_videos">Latest Videos</a>
+                        </li>
+                    </ul>
+                </div>
+            <div class="col-md-9">
+                <!-- Display videos on the right as cards -->
+                <h1 style="font-family: Arial, sans-serif; color: #007bff; margin-top: 20px;">Category: {{ category.category_name }}</h1>
+                <div class="row">
+                    {% for product in products %}
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.product_name }}</h5>
+                                <p class="card-text">{{ product.product_description }}</p>
+                                <button class="read-more-button" onclick="toggleDescription(this)">Read More</button>
+                                <p class="card-text">Price: ₹{{ product.price }}</p>
+                               
+                            </div>
+                            
+                            <div class="card-footer">
+                                <!-- Add a video player to display the video -->
+                                <video controls controlsList="nodownload">
+                                    <source src="{{ product.video_file.url }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <br/>
+                                <div class="d-flex justify-content-between mt-3"> <!-- Add margin-top to create space -->
+                                    <form method="post" action="{% url 'add_to_cart' product.uid %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-primary mr-2">Buy Now</button> <!-- Add margin-right for spacing -->
+                                    </form>
+                                    <form method="post" action="{% url 'add_to_cart' product.uid %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-secondary">Add to Cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDescription(button) {
+            var card = button.closest('.card');
+            card.classList.toggle('show-full');
+            button.textContent = card.classList.contains('show-full') ? 'Read Less' : 'Read More';
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

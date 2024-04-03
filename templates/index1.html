@@ -1,0 +1,975 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Video Selling</title>
+
+    {% load static %}
+
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+
+
+
+<style>
+section.Teacherprenuer.guiness.shape-css {
+transform: skewY(0deg);
+margin-bottom: 0px;
+}
+.media-cover {
+background-color: #f9f5f5;
+overflow: hidden;
+}
+section.Teacherprenuer.guiness.shape-css .non-skew {
+-ms-transform: skewY(0deg);
+transform: skewY(0deg);
+}
+.read_mo {
+border: 2px solid #e90606;
+color: #e90606;
+padding: 8px 16px;
+border-radius: 40px;
+font-weight: 600;
+font-size: 16px;
+}
+.read_mo:hover {
+border: 2px solid #e90606;
+color: #fff;
+background-color:#e90606 ;
+text-decoration: none;
+}
+.arrow-btn::after{
+  content: none;
+}
+.arrow-slides {
+display: flex;
+justify-content: center;
+position: relative;
+margin-top: -20px;
+}
+.arrow-slides .arrow-btn {
+position: unset;
+color: #000;
+font-size: 22px;
+}
+.video_card::after {
+content: '';
+position: absolute;
+left: 0;
+right: 0;
+bottom: 56px;
+height: 12px;
+border-radius: 100%;
+filter: blur(15px);
+width: 71%;
+margin: auto;
+background: #000;
+}
+.video_card {
+position: relative;
+z-index: 1;
+padding-bottom: 65px;
+}
+#loadmores:focus {
+outline: none;
+}
+.boxid{
+display: none;
+}
+.display{
+display: block !important;
+}
+.close_btn {
+position: absolute;
+right: -10px;
+top: -10px;
+z-index: 9;
+background: #fff !important;
+width: 30px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 1;
+border-radius: 100%;
+font-size: 44px;
+font-weight: 300;
+padding: 0;
+}
+.close_btn span {
+margin-top: -8px;
+}
+@media screen and (max-width:768px) {
+.media-box div::after {
+content: '';
+background: #295cc9;
+left: -500px;
+right: -500px;
+height: 50%;
+top: 0;
+bottom: 0;
+position: absolute;
+transform: skewY(351deg);
+margin: auto;
+}
+.media-box div{
+position: relative;
+}
+.media-box img{
+position: relative;
+z-index: 2;
+}
+}
+#myModal .modal-dialog {
+margin-top: 52px;
+}
+</style><style>
+  
+.error{
+        color:red;
+    }
+
+#ib_mobile-error {
+    width: 100%;
+    margin: 3px 0;
+    display: block;
+ }
+
+ .about_vbs h2 {font-size: 24px;color: #fff; display: block; background: #265ac8; padding: 15px 40px;
+width: 50%; margin: 0 auto 30px;}
+.semester h1{ font-size:40px}
+.floating-wpp .floating-wpp-button{ background: none !important; z-index: 99999999; box-shadow: none !important; width:52px !important; height: 72px !important;}
+
+@media only screen and (max-width: 768px) {  
+  .semester h1{ font-size:24px}
+}
+.Orientation {
+    padding: 40px 0px;
+}
+.Orientation iframe {
+    width: 100%;
+    height: 312px;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 3%);
+    border: 10px solid #265ac8;
+    border-radius: 4px;
+}
+.Orientation h2 {
+    font-weight: 600;
+}
+@media screen and (max-width:768px){
+    .mob-flex{
+        flex-direction: column-reverse;
+    }
+    .Orientation h2 {
+        font-weight: 500;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    .Orientation h3 {
+        font-size: 22px;
+    }
+    .siz {
+        width: 224px;
+    }
+    .Orientation iframe {
+        height:250px;
+    }
+}
+
+
+
+</style>
+
+<style>
+    .container-lg {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: auto; /* Adjust as needed */
+        margin-bottom: 20px;
+      
+        transition: transform 0.3s ease;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container:hover {
+        transform: scale(1.05);
+    }
+
+    .video-container::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+       
+        opacity: 0;
+        transition: opacity 0.3s ease 0s;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .video-container:hover::after {
+        opacity: 1;
+    }
+
+    .video-details {
+        text-align: center;
+    }
+
+    .video-description {
+        color: #666;
+        margin: 10px;
+        overflow: hidden;
+        max-height: 80px;
+        transition: max-height 0.3s ease;
+    }
+
+    .video-container.show-full .video-description {
+        max-height: none;
+    }
+
+    .read-more-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        margin: 10px auto;
+    }
+
+    .read-more-button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+    .nav_list {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav_list-item {
+        margin: 0 20px;
+        position: relative;
+    }
+    
+    .nav_list-link {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    /* Dropdown styles */
+    .dropdown {
+        position: relative;
+    }
+    
+    .dropdown .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        border: 1px solid #ccc;
+        list-style: none;
+        padding: 10px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .dropdown-item {
+        margin: 0;
+        padding: 5px 0;
+    }
+    
+    .dropdown-item a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .dropdown-item a:hover {
+        color: #007bff;
+    }
+    .section-heading {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+    }
+    
+</style>
+
+
+</head>
+    
+    
+
+
+
+ 
+
+<body><div class="myloader" style="display: none;">
+<img src="images/loading_new_1.gif" alt="" class="img-fluid">
+</div>
+
+    <!-- header started -->
+   <!-- header started -->
+<header class="header_p">
+<div class="navigation-wrap bg-yellow start-header start-style">
+  <div class="container mob-menu-width">
+      <div class="row">
+          <div class="col-12">
+              <nav class="navbar navbar-expand-md navbar-light"> 
+                 
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav ml-auto py-4 py-md-0 mob_bg_back">
+                          <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                              <a href="/" class="nav-link">Home</a>
+                          </li>
+                          <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                              <a class="nav-link" href="/login">Log In</a>
+                          </li>
+                          <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                              <a class="nav-link" href="/sign-up">Sign Up</a>
+                          </li>
+                         
+                      </ul>
+                  </div>
+              </nav>		
+          </div>
+      </div>
+  </div>
+</div>
+</header>
+
+<section class="main_banner">
+    <div class="container_fluid"> 
+      
+     
+
+      <div class="bnr_content">
+        
+        <p class="text-center mt-3"><img src="https://images.badabusiness.com/bb-website-prod/assets/digital_webinar/images/billonare_blueprint_logo.png" class="img-fluid secc" alt="Billionaire's Blueprint" title="Billionaire's Blueprint"> </p>
+
+        <div class="course_name">1 Year Program In Entrepreneurship</div> 
+        
+        <p class="text-center mt-3 mob_none"><img src="https://images.badabusiness.com/bb-website-prod/assets/digital_webinar/images/first_time_1.png" class="img-fluid firstt" alt="First Time"> </p>
+      </div> 
+      <div class="bnr_image">
+        <img src="https://images.badabusiness.com/bb-website-prod/assets/digital_webinar/images/VBS_1.png" alt="Business Coach Dr. Vivek Bindra" class="img-fluid" title="Business Coach Dr. Vivek Bindra">
+      </div>
+      <div class="mob_bnr_image"> 
+        <img src="https://images.badabusiness.com/bb-website-prod/assets/digital_webinar/images/first_time_1.png" class="img-fluid firstt" alt="First Time" title="First Time">
+      </div>
+    </div>
+  
+</section>
+   
+
+<section class="featured-videos">
+    <div class="container-lg">
+        <h2 class="section-heading">Featured Videos</h2>
+        <div class="row">
+            {% for video in videos %}
+            <div class="col-md-4 mb-4">
+                <div class="video-container">
+                    <video controls width="100%" height="240" controlsList="nodownload" ontimeupdate="checkDuration(this, 10)" onended="videoEnded()">
+                        <source src="{{ video.video_file.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-details">
+                        <h2>{{ video.product_name }}</h2>
+                        <p class="video-description">{{ video.product_description }}</p>
+                        <button class="read-more-button" onclick="toggleDescription(this)">Read More</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<section class="bg_form">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-12 p-0 m-0">
+                <img src="{% static 'images/contact_bg.png' %}" class="img-fluid w-100" alt="Contact" title="Contact">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-12 text-center blue_bg" id="myTarget">
+                <form class="form_contact" id="digital_register_now" action="{% url 'contact_view' %}" method="post">
+                    <section class="bg_form">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-12 p-0 m-0">
+                <img src="{% static 'images/contact_bg.png' %}" class="img-fluid w-100" alt="Contact" title="Contact">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-12 text-center blue_bg" id="myTarget">
+                <form class="form_contact" id="digital_register_now" action="{% url 'contact_view' %}" method="post">
+                    {% csrf_token %}
+                    {% include "base/alert.html" %}
+                    <h2 class="text-white">Start Your Success Journey Now!</h2>
+                    <h2>Contact Now!</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-control txtOnly e_name" id="j_nameA1" placeholder="Name" name="cs_name" value="" autocomplete="off">
+                        <small class="form-text e_error text-left m-0 w-100" id="err_nameA1" style="color:#ff6B6B !important"></small>
+                    </div>
+                    <input type="hidden" name="cs_country" value="100">
+                    <div class="form-group">
+                        <input type="text" class="form-control is-number myphone e_mobile" maxlength="10" placeholder="Mobile Number" id="j_mobileA1" name="cs_mobile" title="Mobile No" value="" autocomplete="off">
+                        <small class="form-text e_error text-left m-0 w-100" id="err_mobileA1" style="color:#ff6B6B !important"></small>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email (optional)" id="j_emailA1" name="cs_email" value="" autocomplete="off">
+                        <small class="form-text e_error text-left m-0 w-100" id="err_emailA1" style="color:#ff6B6B !important"></small>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="date_currnet_event" value="15th Nov 2023">
+                        <!-- Rest of the hidden fields -->
+                        <div class="form-group">
+                            <input type="submit" value="Submit Details" data-btn="A1" class="btn w-100 submit_form">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+               
+
+
+<section class="enquire_now">
+<h3>Enquire now</h3>
+
+<div class="container">
+    <form class="form_contact" id="digital_register_now" action="{% url 'contact_view' %}" method="post">
+        <div class="form-group  ">
+            <div class="row">
+                {% csrf_token %}
+                {% include "base/alert.html" %}
+                <div class="col-md-6 col-sm-6 col-12 text-center">
+                    <input type="text" class="form-control e_name txtOnly" placeholder="Name" id="cs_name" name="cs_name" value="" autocomplete="off">
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-12 mtform text-center"> 
+                                       
+                    <input type="text" class="form-control e_mobile is-number myphone" maxlength="10" placeholder="Phone Number" id="cs_mobile" name="cs_mobile" value="" style="border-radius: 0px 4px 4px 0; width: 65%;  float: left;" autocomplete="off">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mt-3 text-center"> 
+            <input type="email" class="form-control w-100" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email optional" name="cs_email" value="" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3" placeholder="Message"></textarea>
+        </div>
+        <input type="hidden" name="date_currnet_event" value="15th Nov 2023">
+        <input type="hidden" name="py_rf_code" value="">
+        <input type="hidden" name="owner_id" value="14288">
+        <input type="hidden" name="source" value="digital_webinar">
+        <input type="hidden" name="py_where_check" value="526">
+        <input type="hidden" name="py_course[]" data-key="digital_py_course_weekly_webinar" value="1704">
+        <input type="hidden" name="lead_type" value="digital">
+        <input type="hidden" name="event_type" value="Weekly Webinar">
+        <input type="hidden" name="page_type" value="DIGITAL_WEEKLY_EVENT">
+        <input type="hidden" name="otpA1" class="otpA1" value="">
+        <input type="hidden" name="otp" class="otp_verify_status" value="0">
+        <!-- <div class="g-recaptcha" data-sitekey="6LfiCkwmAAAAAPkqzr9r7yYAyELgEI1WRj4E8RJ8"></div> -->
+        <input type="submit" value="Submit" id="submit_digital_weekly_form_2" class="btn btn-danger" style="background-color:red; border-radius: 0px; padding: 10px 20px;">
+    <p></p>
+  </form>
+</div>
+</section>
+<!-- Footer -->
+<section class="nwfooter mt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+       
+        <small> Embark on a journey of discovery with our extensive collection of premium online videos. Elevate your learning experience through engaging content, rich visuals, and interactive assessments. Dive into a world of knowledge crafted to enhance your understanding and skills.</small>
+      </div>
+      
+      <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+        <div class="nw_cont">
+          <h4>Contact us</h4>    
+                        <div><a href="mailto:jaatashokchoudhary2002@gmail.com"><img src="images/nw_mail.png" class="img-fluid">jaatashokchoudhary2002@gmail.com</a></div>
+          <div><img src="images/nw_map.png" class="img-fluid"> Plot No- 15, Okhla Phase III, New Delhi - 110020</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div id="WAButton" style="right:40px; bottom:60px; background:none !important; z-index:9999;"></div> 
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/popper.min.js'%}"></script>
+
+
+<script>
+
+  
+ 
+  
+$('body').on('mouseenter mouseleave','.nav-item',function(e){
+        if ($(window).width() > 750) {
+            var _d=$(e.target).closest('.nav-item');_d.addClass('show');
+            setTimeout(function(){
+            _d[_d.is(':hover')?'addClass':'removeClass']('show');
+            },1);
+        }
+    });	
+
+</script>
+
+
+
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/api.js"></script>
+
+<script>
+
+    function toggleDescription(button) {
+        var videoContainer = button.closest('.video-container');
+        videoContainer.classList.toggle('show-full');
+        button.textContent = videoContainer.classList.contains('show-full') ? 'Read Less' : 'Read More';
+    }
+
+function changeText()
+{
+var heading = document.getElementById('schediule');
+heading.textContent = 'Buy Now';
+}
+
+function changeTextTwo()
+{
+var heading = document.getElementById('schediule_one');
+heading.textContent = 'Enroll Now';
+}
+
+$("#schediule").click(function () {
+    $("h3#schediule").css("display","block")
+    $("h3#schediule_one").css("display","none")
+});
+
+$("#schediule_one").click(function () {
+    $("h3#schediule").css("display","none")
+    $("h3#schediule_one").css("display","block")
+});
+
+function checkDuration(video, maxDuration) {
+    if (video.currentTime >= maxDuration) {
+        video.pause();
+        videoEnded(video);
+    }
+}
+
+function videoEnded(video) {
+    // Check if the video has played for at least 10 seconds
+    if (video.currentTime >= 10) {
+        // Use SweetAlert2 for a more attractive alert
+        Swal.fire({
+            title: 'Login Required',
+            text: 'Please login to continue watching.',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            // You can add additional logic here if needed
+        });
+    }
+}
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+
+
+<script>
+$(document).ready(function (e)
+{
+
+    jQuery.validator.addMethod("alpha", function (value, element, param) {
+        return value.match(new RegExp("." + param + "$"));
+    });
+
+
+    $("#digital_register_now").validate({
+        rules: {
+            "cs_name": {
+                required: true,
+                alpha: "[a-zA-Z]+",
+                minlength: 3,
+                maxlength: 30,
+            },
+
+            "cs_country": "required",
+            "cs_mobile": {
+                required: true,
+                minlength: 10,
+                maxlength: 10,
+                digits: true
+            },
+            "cs_email": {
+                email: true
+            },
+        },
+        messages: {
+            cs_name: {
+                required: "Please enter your Name",
+                minlength: "Your name must be at least 3 Characters",
+                maxlength: "Your name not greater than 30 Characters",
+                alpha: "Your name must have only Letters",
+            },
+            cs_country: "Please enter your Name",
+            cs_mobile: {
+                required: "Please enter your Mobile Number",
+                minlength: "Your mobile number must be at least 10 Characters",
+                maxlength: "Your mobile number not greater than 10 Characters"
+            }
+        },
+        errorPlacement: function (error, element)
+        {
+            error.insertAfter(element);
+        },
+        submitHandler: function (form) {
+            setDigitalRecords(form, 'submit_digital_weekly_form');
+        }
+
+    });
+
+    $("#digital_register_now_2").validate({
+rules: {
+    "cs_name": {
+        required: true,
+        alpha: "[a-zA-Z]+",
+        minlength: 3,
+        maxlength: 30
+    },
+    "cs_country": "required",
+    "cs_mobile": {
+        required: true,
+        minlength: 10,
+        maxlength: 10,
+        digits: true
+    },
+    "cs_email": {
+        email: true
+    },
+},
+messages: {
+    cs_name: {
+        required: "Please enter your Name",
+        minlength: "Your name must be at least 3 Characters",
+        maxlength: "Your name not greater than 30 Characters",
+        alpha: "Your name must have only Letters",
+    },
+    cs_country: "Please enter your Name",
+    cs_mobile: {
+        required: "Please enter your Mobile Number",
+        minlength: "Your mobile number must be at least 10 Characters",
+        maxlength: "Your mobile number not greater than 10 Characters"
+    }
+},
+errorPlacement: function (error, element) {
+    error.insertAfter(element);
+},
+submitHandler: function (form) {
+    setDigitalRecords(form, 'submit_digital_weekly_form_2');
+}
+});
+
+
+    $("#weekly_event_buy_now").validate({
+        rules: {
+            "cs_name": {
+                required: true,
+                alpha: "[a-zA-Z]+",
+                minlength: 3,
+                maxlength: 30
+            },
+
+            "cs_country": "required",
+            "cs_mobile": {
+                required: true,
+                minlength: 10,
+                maxlength: 10,
+                digits: true
+            },
+            "cs_email": {
+                required: true,
+                email: true
+            },
+            "is_consent": {
+                required: true,
+            }
+        },
+        messages: {
+            cs_name:{
+                required: "Please enter your Name",
+                minlength: "Your name must be at least 3 Characters",
+                maxlength: "Your name not greater than 30 Characters",
+                alpha: "Your name must have only Letters",
+            },
+            cs_country: "Please enter your Name",
+            cs_mobile:{
+                required: "Please enter your Mobile Number",
+                minlength: "Your mobile number must be at least 10 Characters",
+                maxlength: "Your mobile number not greater than 10 Characters"
+            },
+            is_consent: "You must agree to terms and conditions"
+        },
+        errorPlacement: function(error, element) 
+        {
+            error.insertAfter(element);
+        },
+        // submitHandler: function (form) {
+        //     form.submit();
+        // }
+
+    });
+
+    function setDigitalRecords(form, buttonId)
+    {
+        $('#' + buttonId).val('Please wait...');
+        $('#' + buttonId).prop('disabled', true);
+        var cs_mobile = $('#j_mobileA1').val(); 
+        if (buttonId == 'submit_digital_weekly_form') {
+            OtpFormPopup('digital_register_now');
+            $('body').addClass('modal-open');
+            if (cs_mobile) {
+                let repString = cs_mobile.slice(3, 6);
+                let newMessage = cs_mobile.replace(repString, '*****');
+                $('.customer-mobile').html(newMessage);
+            }
+            $('#mainPageModalCenter').modal('show');
+            $('#' + buttonId).text('Submit Details');
+            $('#' + buttonId).val('Submit Details');
+            $('#' + buttonId).removeAttr('disabled');
+            return false; // required to block normal submit since you used ajax
+         }
+         else if(buttonId == 'submit_digital_weekly_form_2')
+        {
+            $('#' + buttonId).val('Please wait...');
+            $('#' + buttonId).prop('disabled', true);
+            var cs_mobile = $('#cs_mobile').val(); 
+            
+                OtpFormPopup('digital_register_now_2');
+                $('body').addClass('modal-open');
+                if (cs_mobile) {
+                    let repString = cs_mobile.slice(3, 6);
+                    let newMessage = cs_mobile.replace(repString, '*****');
+                    $('.customer-mobile').html(newMessage);
+                }
+                $('#enquireNowModalCenter').modal('show');
+                $('#' + buttonId).text('Submit');
+                $('#' + buttonId).val('Submit');
+                $('#' + buttonId).removeAttr('disabled');
+                return false; // required to block normal submit since you used ajax  
+            
+        }
+
+    $(".e_name").keypress(function (e) {
+        var name = $(this).val();
+        var keyCode = e.keyCode || e.which;
+        var regex = /^[A-Za-z\s]+$/;
+        var isValid = regex.test(String.fromCharCode(keyCode));
+        return isValid;
+    });
+
+    $(".e_mobile").keypress(function (e) {
+        var mobNum = $(this).val();
+        var keyCode = e.keyCode || e.which;
+        var regex = /^[0-9]+$/;
+        var isValid = regex.test(String.fromCharCode(keyCode));
+        return isValid;
+    });
+
+    $("a[href='#schedule1']").click(function () {
+        $("html, body").delay(200).animate({scrollTop: $('#digital_register_now').offset().top}, 300);
+        return false;
+    });
+    $(document).ready(function() {
+        $(document).on('click', 'button.close.enquirenowclose', function() {
+            $("#digital_register_now_2").reset();
+        });
+    });
+    $('button.close.enrollpop').click(function() {
+    $("#weekly_event_enroll_now").trigger("reset");
+    $('.otpdiv').hide();
+    $('#enrollnowfrm').show();
+    });
+
+    $('button.close.buynowclose').click(function() {
+    $("#weekly_buy_now").trigger("reset");
+    $('#buynowfrm').show();
+    $('.otpdivpop').hide();
+    $('body').removeClass('modal-open');
+    });
+}
+});
+
+$(document).ready(function() {
+$(".txtOnly").on("input", function() {
+    var inputValue = $(this).val();
+    var validCharactersRegex = /^[A-Za-z\s]+$/; // Allows letters and spaces
+
+    if (!validCharactersRegex.test(inputValue)) {
+        // If the input contains invalid characters, remove them
+        var sanitizedValue = inputValue.replace(/[^A-Za-z\s]+/g, '');
+        $(this).val(sanitizedValue);
+    }
+});
+$(".is-number").on("input", function() {
+    var inputValue = $(this).val();
+    var validNumberRegex = /^[0-9]+$/; // Allows only numbers
+
+    if (!validNumberRegex.test(inputValue)) {
+        // If the input contains non-numeric characters, remove them
+        var sanitizedValue = inputValue.replace(/[^0-9]+/g, '');
+        $(this).val(sanitizedValue);
+    }
+});
+});
+//        mobile validation for mobile device
+   $("#j_mobileA1, #cs_mobile,#cs_mobile1,#enroll_mobile").on("input", function () {
+        // Get the input value
+        var inputValue = $(this).val();
+        // Define a regular expression pattern for numeric characters only
+        var numericPattern = /^[0-9]*$/;
+        // Test if the input matches the pattern
+        if (!numericPattern.test(inputValue)) {
+            // If it doesn't match, remove non-numeric characters
+            $(this).val(inputValue.replace(/[^0-9]/g, ''));
+        }
+        if (inputValue.length > 10) {
+            inputValue = inputValue.slice(0, 10); // Limit to 10 digits
+            $(this).val(inputValue);
+        }
+    });
+    //        name vlidation for mobile device
+    $("#j_nameA1,#cs_name,#cs_name1,#enroll_name").on("input", function () {
+        var inputValue = $(this).val();
+        var alphabeticPattern = /^[a-zA-Z\s]*$/; // Regular expression for alphabetic characters and spaces
+
+        if (!alphabeticPattern.test(inputValue)) {
+            // If input doesn't match the pattern, remove non-alphabetic and non-space characters
+            this.value = inputValue.replace(/[^a-zA-Z\s]/g, '');
+        }
+    });
+
+$(document).ready(function()
+{
+    // Wait for 3 seconds (3000 milliseconds) before opening the modal
+    setTimeout(function()
+    {
+        $('#registernowModalCenter').modal('show');
+    }, 3000);
+});
+</script>
+<script>
+    $(document).ready(function() {
+    var $videoSrc;  
+      $('.video-btn').click(function() {
+          $videoSrc = $(this).data( "src" );
+      });
+      $('#myModal').on('shown.bs.modal', function (e) { 
+        $("#video").attr('src',$videoSrc + "");
+      })
+      $('#myModal').on('hide.bs.modal', function (e) {
+          $("#video").attr('src',$videoSrc); 
+      }) 
+    });  
+
+    $(function () {
+           $(".boxid").slice(0, 3).addClass('display');
+           $("#loadmores").on('click', function (e) {
+               e.preventDefault();
+               $(".boxid:hidden").slice(0, 3).addClass('display');
+               if ($(".boxid:hidden").length == 2) {
+                   $("#load").fadeOut('slow');
+               }
+           });
+       });
+
+       $('a[href=#top]').click(function () {
+           $('body,html').animate({
+               scrollTop: 0
+           }, 600);
+           return false;
+       });
+</script>
+<script>
+$(document).ready(function() {
+    // Add an event listener to detect when the modal is shown
+    $('#booknowModalCenter').on('shown.bs.modal', function () {
+        // Reset the form with id "myForm"
+        $('#weekly_buy_now')[0].reset();
+    });
+
+    $('#registernowModalCenter').on('shown.bs.modal', function () {
+        // Reset the form with id "myForm"
+        $('#weekly_event_enroll_now')[0].reset();
+    });
+
+    $('button.close.enrollpop').click(function() {
+    $("#weekly_event_enroll_now").trigger("reset");
+    $('#enrollnowfrm').show();
+    $('.otpdiv').hide();
+    $('body').removeClass('modal-open');
+    });
+
+    $('button.close.buynowclose').click(function() {
+    $("#weekly_buy_now").trigger("reset");
+    $('#buynowfrm').show();
+    $('.otpdivpop').hide();
+    $('body').removeClass('modal-open');
+    });
+    
+});
+</script></body></html>

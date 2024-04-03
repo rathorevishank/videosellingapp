@@ -1,0 +1,271 @@
+@media only screen and (max-width:1600px) { 
+	
+}
+
+@media only screen and (max-width:1366px) {  
+    
+}
+
+@media only screen and (max-width:1200px) { 
+    
+    .bnr_txt .innrcontent h4{ line-height: 40px; font-size: 26px; }
+    
+    .ff_section li{ font-size: 24px; margin-bottom:20px ; line-height: 30px;}
+    .concerned h2{ font-size: 40px;}
+    .program .curve_right p{ font-size: 20px; line-height: 35px; }
+    .program .curve_left p{ font-size: 20px; line-height: 35px; } 
+    .mentors .mentors_card span{ width: 50px; height: 50px;} 
+    .bullet_g .g_card span{ display: table-cell; color: #fff; font-size: 20px; font-weight:700;}
+    .b_card h3{ font-size: 30px;}
+    .head_get h4{ font-size: 22px;}
+    
+    .blue_card{ padding: 30px;} 
+    .blue_card_section li{ font-size: 18px;}
+    .achive_main li{ font-size: 22px;}
+    
+
+    .achive:before  { width: 90%;}
+    .form_contact h1 { font-size: 32px;}
+    .form_contact h2{ padding: 5px 0;}
+    .btn_desgn{ font-size: 18px;}
+    .semester .sem_inner h4{ font-size: 20px;}
+    ul.timeline > li{ margin: 10px 0; padding-left:40px ; font-size: 11px;}
+    .mentors h4 b{ font-size: 16px;}
+    .download_syllabus{ padding: 10px 20px;}
+    .Teacherprenuer .mybuttons{ font-size: 16px;}
+    .Teacherprenuer .mybuttons img{ max-width: 50px; max-height: 40px; margin: 0 20px;}
+    .about p{ font-size: 18px;}
+    .about h4{ margin: 10px 0;}
+    .world-record{ height: 340px;  background-size: 100% 100%;}
+    .world-record span{ font-size: 20px;}
+    .awards_accolades{ margin: 50px 0 30px;}
+    .awards_card span{ font-size: 14px;}
+    .main_gla_about .sec_main li{ font-size: 16px;}
+    .awards_card img{ max-width: 165px; max-height: 105px;}
+    .awards_card{ height: 205px;}
+    .firstt{ max-width: 350px;}
+    .secc{max-width: 350px; }
+    .main_banner .bnr_image img{ max-width: 250px; float: left; text-align: center;} 
+    .main_banner{ height: 500px;}
+
+
+
+    .navbar-brand img{ height: 50px; margin-right: 20px;}
+    .header_p .navbar-brand{ margin: 0; padding: 0;}
+    .header_p .nav-item{ padding: 5px 0; margin: 0 5px 0 0 !important;}
+    .menubtn{ font-size: 12px; margin: 15px 0;}
+    .signin{  margin-left: 10px; padding: 5px 12px; height: 34px; margin: 10px 0 0 10px;} 
+    .bnr p{width: 100%; }
+    .btwoc{ width:992px}
+    .btwoc-tile{ width: 130px;}
+    .btwoc-tile span{ font-size: 12px;}
+    .nav-link{ padding: 5px 4px !important;}
+
+    .nw_cont div a{ font-size: 12px;}
+    .nw_cont div{ font-size: 12px;}
+    .term_txt{ font-size: 12px;}
+    .nwfooter small{ font-size: 12px;}
+    .nw_cont div a{ margin-right: 20px; }
+    .pop_content h4{ font-size: 24px;}
+
+
+}
+
+@media only screen and (max-width: 992px) {     
+
+
+    .main_banner .bnr_content h4{ font-size: 22px; }
+    .main_banner .bnr_content h5{ font-size: 24px; margin-top: 7px; }
+    .year_name{ width: 70%; font-size: 20px;}
+    .course_name{ font-size: 18px;}
+    .main_banner .bnr_image img{ max-width: 250px;}
+    .main_banner{ height: 500px;}
+    .struggling h3{ font-size: 30px; line-height: 40px;}
+    .blue_card{ padding: 20px;}
+    .blue_card_section li{ font-size: 14px; margin: 10px 0 0;}
+    .two_head h4{ font-size: 22px;}
+    .achive p{ font-size: 14px; line-height: 18px;} 
+    .form_contact h1{ font-size: 28px;}
+    .learn_card h5{ font-size: 14px;}
+    .learn_card{ height: 190px;}
+    .btn_desgn{ font-size: 16px;}
+    .head_get h4{ font-size: 20px;}
+    .one .points_grey h4{ font-size: 20px;}
+    .points_grey li{ font-size: 16px;}
+    .img_circle{ max-width: 100px; margin: -60px auto;}
+    .mrg_top{margin: 45px 0 50px;}
+    .semester .sem_inner h4{ font-size: 16px;}
+    .download_syllabus{ margin: 10px auto 0px;}
+    .certi h2{ font-size: 26px;}
+    .certi h5{ font-size: 18px;}
+    .mentors h2{ font-size: 30px;}
+    .Teacherprenuer .mybuttons{margin: 0 0 10px; font-size: 13px;}
+    .Teacherprenuer .mybuttons img { max-width: 34px; max-height: 28px;  margin: 0 10px; } 
+    .Teacherprenuer h2{ font-size: 30px;}
+    .about p{ font-size: 16px;}
+    .about h4{ font-size: 18px;}
+    .world-record{ height: 250px;}
+    .world-record span{ font-size: 16px;}
+    .awards_card{ padding: 10px; height: 155px; margin-bottom: 15px;} 
+    .awards_card span{ font-size: 12px;}
+    .awards_card p{ margin-bottom: 7px;}
+    .awards_card img{   max-width: 125px; max-height: 75px;}
+    .main_gla_about .sec_main li{ font-size: 14px;}
+    .main_gla_about .sec_main li{ margin:7px 0 0}
+    
+
+    .navbar-brand img { height: 50px; margin-right: 0px;}
+    .header_p .container { width: 100%; max-width: 100%;}
+    .header_p .nav-item{ padding: 3px 0;margin: 0 5px !important ; }
+    .nav-link{ font-size: 12px;}
+    .nw_social img{ max-width: 40px;}
+
+}
+
+@media only screen and (max-width: 768px) {  
+    .struggling_main{ padding: 0; height: auto;margin: 0px 0;  padding: 20px 0;} 
+    .struggling h3{ text-align: center;}
+    .struggling { text-align: center;}.mentors .mentors_card span { top: -5px;  left: 23%; } 
+    .mentors h4 b{font-size: 16px; }
+    .mentors h4  { font-size: 14px;}.mob_none{ display: none;}
+    .bnr_image{ display: block;} 
+    .mob_bnr_image{ display: block;} 
+    .main_banner .bnr_image{ width: 100%; text-align: center;  padding: 0px; display: inline-flex; }
+    .main_banner .bnr_image img{ max-width: 200px; margin: 0 auto;   text-align: center; }
+    .main_banner{ height: auto;}
+    .mob_bnr_image{ width: 100%; margin: 0 auto; text-align: center; position: relative; top: -100px;}
+    .firstt{ max-width: 350px !important;}
+    .bnr_content{ width: 100%;}
+    .main_banner .bnr_content{ width: 100%; padding: 50px 50px 10px;}
+    .Teacherprenuer .mybuttons{ font-size:17px; padding: 15px;}
+    .mentors h3{ width: 100%;}
+    .blue_card_section li{ font-size: 16px;}
+    .struggling h3{ margin: 30px 0; display: block;}
+    .struggling h3 br{ display: none;}
+    .premium_course .free_bonus h3{  font-size: 22px; }
+    .premium_course .free_bonus h5{  font-size: 22px;}
+    .premium_course .free_bonus { margin: 20px 0;}
+    .btn_design{ font-size: 18px;}
+    .mob_bnr_image img{ max-width: 250px; margin: 40px 0 -40px;}
+    .mt_gap{ margin-top: 0px;}
+    span .fa-hand-o-right{ margin-top: 23px;}
+    span .fa-hand-o-left{ margin-top: 23px;}
+    .learn_card{ height: 210px;}
+    .one .points_grey h4{ font-size: 16px; margin-bottom: 4px;}
+    .points_grey li{ font-size: 16px;}
+    .two_head h4{ font-size: 20px; }
+    ul.timeline > li{ font-size: 14px;}
+    .appboy{ max-width: 300px; margin: 0 auto;  text-align: center; display: block;}
+    .Teacherprenuer .mybuttons{ font-size: 17px; padding: 7px; margin: 0 0 15px;}
+    .Teacherprenuer .mybuttons{ margin: 0 0 5px;}
+    .about_vbs h1{ width: 80%;} 
+    .about p{ font-size: 20px; margin: 20px 0; }
+    .about h4{ font-size: 24px; margin: 0; padding: 10px;} 
+    .Teacherprenuer h2{ font-size: 24px;}
+    .world-record{ height: 180px;}
+    .world-record span{ font-size: 12px; bottom: 15px; }
+    .awards_card span{ font-size: 13px;}
+    .main_gla_about{ width: 90%; margin: 0 5%; }
+
+
+    .nav-item:after{display: none;}
+    .nav-item::before {position: absolute;display: block;top: 15px;	left: 0;width: 11px;height: 1px;content: "";border: none;background-color: #fff; }
+    .dropdown-toggle::after {position: absolute;display: block;top: 10px;	left: -22px;width: 1px;	height: 11px;	content: "";	border: none;	background-color: #fff;	transition: all 200ms linear;}
+    .dropdown-toggle[aria-expanded="true"]::after{	transform: rotate(90deg);opacity: 0;}
+    .dropdown-menu {padding: 0 !important;background-color: transparent;box-shadow: none;transition: all 200ms linear;}
+    .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {margin-top: 10px !important;margin-bottom: 20px !important;}
+    a.dropdown-item{ color:#fff; font-size: 12px;}
+    .mob_bg_back{ background: #1d4b9c; padding: 0 0 0 20px; margin-top: 10px; border-radius: 10px; box-shadow: 0px 2px 2px #ccc;  }
+    .signin{ display: none;}
+    .bnr p{ width: 100%;}
+    .navigation-wrap{ padding: 10px;}
+    .btwoc{ width:576px}
+    .header_p .nav-item{ padding: 0;}
+    .navbar-brand img{ height: 40px;}
+
+    .nwfooter small{ font-size: 12px;}
+    .desk_app_link{ display: none; }
+    .mob_app_link{ display: block;  }
+
+
+}
+
+@media only screen and (max-width: 640px) {        
+    .main_banner .bnr_image img{ max-width: 170px;}
+    .mob_bnr_image img{ margin: 50px 0 -70px }
+    .form_contact{ width: 100%; top: -50px;}
+    .main_gla_about .sec_main li{ font-size: 16px;}
+    .bb_head img{ max-height: 50px;}
+    .firstt{ max-width: 300px;} 
+    .secc{max-width: 300px; }
+
+}
+ 
+@media only screen and (max-width: 576px) { 
+     
+    .none-transform{padding: 20px 0 20px; margin: 0;}  
+    .year_name{ width: 80%;}
+    .struggling h3{ font-size: 24px; margin: 0 0 30px 0;}
+    .achive::before{ width: 94%;}
+    .achive p{ font-size: 18px; line-height: 25px; }
+    .form_contact h1{ font-size: 22px;}
+    .form_contact h2{ font-size: 26px;}
+    .certi h2{ font-size: 24px;}
+    .certi h5{ font-size: 16px;}
+    .appboy{ max-width: 250px;}
+    .world-record{ height: 220px; }
+    .world-record span{ font-size: 14px;}
+    .main_gla_about img{ max-width: 220px;}
+    .main_gla_about{width: 90%;  margin: 0 2.5%; }
+    .main_gla_about .sec_main li{ font-size: 15px;}
+    .awards_card img{ max-width: 125px; max-height: 105px;}
+    .awards_card{ height: 100%; }
+    .mtform{ margin-top: 16px;}
+}
+
+@media only screen and (max-width: 480px) {  
+    
+   .form_contact{ width: 90%;}
+   .img_circle{ max-width: 80px; margin: -40px auto;}
+   .main_banner .bnr_content{ width: 100%; padding: 15px 10px 10px; }
+   .mrg_top{ margin: 30px 0 30px; }
+   .about p{ font-size: 17px;}
+   .about h4{ font-size: 20px;}
+   .world-record{ height: 200px;}
+   .world-record span{ font-size: 13px;} 
+   .learn_card h5{font-size: 12px; font-weight: 700;  }
+   .learn_card{ padding: 10px 7px 10px; height: 170px;}
+   .about_vbs h1 b{ font-size: 20px; text-transform: uppercase;}
+   .main_gla_about img{ max-width: 170px;}
+
+}
+
+
+@media only screen and (max-width: 400px) {  
+    .awards_card span{ font-size: 11px;}
+    .main_gla_about .sec_main{ padding: 15px 15px 20px;}
+    .main_gla_about .sec_main li{ font-size: 13px;}
+    .main_banner .bnr_content h4{ font-size: 20px;}
+    .year_name{ padding: 15px;}
+    .course_name{ padding: 10px;}
+    .blue_card_section{margin: 0;}
+    .blue_card_section li{ font-size: 14px;}
+    .two_head{ margin-top: 20px !important; }
+    .achive::before{ width: 91%;}
+    .form_contact{ width: 100%;}
+    ul.timeline > li{ font-size: 12px;}
+    .mentors h4 b{ font-size: 14px;}
+    .mentors h3 b{ font-size: 20px;}
+    .about_vbs h1{ width: 100%;}
+    .about_vbs h1 b{ font-size: 20px; text-transform: uppercase;}
+    .about h4{ font-size: 18px;}
+    .mob_gui{ max-width: 250px !important;}
+    .world-record{ height: 170px;}
+    .main_gla_about img{ max-width: 140px;}
+
+
+    .media-right img{ max-width: 40px;}
+    .navbar-brand img{ height: 30px;}
+
+
+}

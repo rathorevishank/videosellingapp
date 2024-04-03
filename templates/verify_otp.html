@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OTP Verification</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <!-- Add any additional stylesheets or scripts as needed -->
+    <style>
+        /* Add your custom styles here if needed */
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-center">OTP Verification</h2>
+                    </div>
+                    <div class="card-body">
+                        <form autocomplete="off" method="post" action="{% url 'verify_otp' user.id %}">
+                            {% csrf_token %}
+                            {% include "base/alert.html" %}
+                            <div class="mb-3">
+                                <label for="otp" class="form-label">Enter OTP</label>
+                                <input type="text" class="form-control" name="otp" required="required">
+                            </div>
+                            <input type="hidden" name="user_email" value="{{ user.email }}">
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Verify OTP</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Add any additional scripts as needed -->
+</body>
+</html>

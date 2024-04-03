@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    <title>VideoSnaps - Home</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+        .container-lg {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: auto; /* Adjust as needed */
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container:hover {
+            transform: scale(1.05);
+        }
+
+        .video-container::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease 0s;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-container:hover::after {
+            opacity: 1;
+        }
+
+        .video-details {
+            text-align: center;
+        }
+
+        .video-description {
+            color: #666;
+            margin: 10px;
+            overflow: hidden;
+            max-height: 80px;
+            transition: max-height 0.3s ease;
+            white-space: pre-wrap;
+        }
+        
+
+        .video-container.show-full .video-description {
+            max-height: none;
+        }
+
+        .read-more-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px auto;
+        }
+
+        .read-more-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .col-md-4 {
+            margin-bottom: 20px; /* Adjust the value as needed for spacing */
+            margin-right: 20px;  /* Add margin to the right for horizontal spacing */
+        }
+        
+        /* Add a media query to remove the right margin on the last column in each row */
+        @media (min-width: 768px) {
+            .col-md-4:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    
+                </a>
+                <ul class="nav_list">
+                    <li class="nav_list-item">
+                        <a href="/" class="nav_list-link">Home</a>
+                    </li>
+                    <li class="nav_list-item">
+                        <a class="nav_list-link" href="/login">Log In</a>
+                    </li>
+                    <li class="nav_list-item">
+                        <a class="nav_list-link" href="/sign-up">Sign Up</a>
+                    </li>
+                </ul>
+                <a href="index.html" class="btn btn-black">Get an invite</a>
+                <button class="menu_toggle">
+                    <svg height="6" width="20" xmlns="http://www.w3.org/2000/svg" class="open">
+                        <g fill-rule="evenodd">
+                            <path d="M0 0h20v1H0zM0 5h20v1H0z"></path>
+                        </g>
+                    </svg>
+                    <svg height="15" width="16" xmlns="http://www.w3.org/2000/svg" class="close">
+                        <path
+                            d="M14.718.075l.707.707L8.707 7.5l6.718 6.718-.707.707L8 8.207l-6.718 6.718-.707-.707L7.293 7.5.575.782l.707-.707L8 6.793 14.718.075z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <!-- SELL YOUR VIDEOS SECTION -->
+        <section class="sell-videos">
+            <div class="section_text section_text_black">
+                <div class="section_text-box">
+                    <h2 class="heading white">Sell Your Videos with VideoSnaps</h2>
+                    <p class="opaque-grey">VideoSnaps is your platform to sell and share video content. Join us and reach a global audience of video enthusiasts.</p>
+                    <a href="index.html" class="invite-link invite-link-white">Get started now</a>
+                </div>
+            </div>
+            <div class="section_image section-create-img"></div>
+        </section>
+
+        <!-- DISCOVER AMAZING VIDEOS SECTION -->
+        <section class="discover-videos">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="section_image section-stories-img"></div>
+                    <div class="section_text section_text_white">
+                        <div class="section_text-box">
+                            <h2 class="heading black">Discover Amazing Videos</h2>
+                            <p class="opaque-black">Explore a vast collection of videos from talented creators worldwide. From documentaries to entertainment, we've got it all.</p>
+                            <a href="videos.html" class="invite-link invite-link-black">Browse Videos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SELLING MADE EASY SECTION -->
+        <section class="sell-easy">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="section_text section_text_white">
+                        <div class="section_text-box">
+                            <h2 class="heading black">Selling Made Easy</h2>
+                            <p class="opaque-black">VideoSnaps provides you with tools to monetize your content effortlessly. Start earning from your passion today.</p>
+                            <a href="pricing.html" class="invite-link invite-link-black">Explore Pricing</a>
+                        </div>
+                    </div>
+                    <div class="section_image section-everyone-img"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED VIDEOS SECTION -->
+        <section class="featured-videos">
+            <div class="container-lg">
+                <h2 class="section-heading">Featured Videos</h2>
+                <br/>
+                <br/>
+                <div class="row">
+                    {% for video in videos %}
+                    <div class="col-md-4 mb-4">
+                        <div class="video-container">
+                            <video controls width="100%" height="240" controlsList="nodownload" ontimeupdate="checkDuration(this, 10)" onended="videoEnded()">
+                                <source src="{{ video.video_file.url }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-details">
+                                <h2>{{ video.product_name }}</h2>
+                                <p class="video-description">{{ video.product_description }}</p>
+                                <button class="read-more-button" onclick="toggleDescription(this)">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        
+
+        <!-- FEATURES GRID -->
+     
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer_logo-box">
+                    <a href=" class="logo">
+                    
+                    </a>
+                    <ul class="social">
+                        <li>
+                            <a class="facebook" href="index.html"></a>
+                        </li>
+                        <li>
+                            <a class="youtube" href="index.html"></a>
+                        </li>
+                        <li>
+                            <a class="twitter" href="index.html"></a>
+                        </li>
+                        <li>
+                            <a class="pinterest" href="index.html"></a>
+                        </li>
+                        <li>
+                            <a class="instagram" href="index.html"></a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer_copyright">
+                    <a href="index.html" class="invite-link invite-link-white">Get started</a>
+                    <p class="opaque-grey">Copyright 2023. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function checkDuration(video, maxDuration) {
+            if (video.currentTime >= maxDuration) {
+                video.pause();
+                videoEnded(video);
+            }
+        }
+        
+        function videoEnded(video) {
+            // Check if the video has played for at least 10 seconds
+            if (video.currentTime >= 10) {
+                // Use SweetAlert2 for a more attractive alert
+                Swal.fire({
+                    title: 'Login Required',
+                    text: 'Please login to continue watching.',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    // You can add additional logic here if needed
+                });
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="{% static 'js/app.js'%}"></script>
+</body>
+
+</html>
