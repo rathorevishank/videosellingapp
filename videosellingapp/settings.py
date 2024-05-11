@@ -131,8 +131,8 @@ SECURE_SSL_REDIRECT = False
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-PAYTM_SECRET_KEY = 'GvYRwo%@Vl2Ml19y' # < your staging key >
-PAYTM_MERCHANT_ID = 'BiDzIl44175596745392'
+PAYTM_SECRET_KEY = '' # < your staging key >
+PAYTM_MERCHANT_ID = ''
 PAYTM_WEBSITE = 'WEBSTAGING'
 PAYTM_CHANNEL_ID = 'WEB'
 PAYTM_INDUSTRY_TYPE_ID = 'Retail'
@@ -141,12 +141,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'vishankrthr@gmail.com'
-EMAIL_HOST_PASSWORD = 'vqnw ixgi xmtb wmig'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 
-RECAPTCHA_PUBLIC_KEY = '6LdpdyopAAAAAO-f-XFUyxydEtMDAcPhzZ3r_PMX'
-RECAPTCHA_PRIVATE_KEY = "6LdpdyopAAAAABKoOkmD3S7V1ELvzaeIRkJwsyZT"
+RECAPTCHA_PUBLIC_KEY = ''
+RECAPTCHA_PRIVATE_KEY = ""
 # settings.py
 LOGIN_URL = '/login/'
 
